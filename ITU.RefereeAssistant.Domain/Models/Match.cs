@@ -6,15 +6,32 @@ using System.Threading.Tasks;
 
 namespace ITU.RefereeAssistant.Domain.Models
 {
-    class Match
+    public class Match
     {
+        /// <summary>
+        /// ctor
+        /// </summary>
+        public Match()
+        {
+            Players = new List<Player>();
+        }
+
+        /// <summary>
+        /// идентификатор
+        /// </summary>
         long ID { get; set; }
 
-        Player[] Players { get; set; }
+        /// <summary>
+        /// список участников
+        /// </summary>
+        public List<Player> Players { get; set; }
 
         Raiting[] Raitings { get; set; }
-        //Player[] Winner { get; set; }
 
-        //Round[] Rounds { get; set; }
+        public override string ToString()
+        {
+            return String.Join("  |  ", Players);
+        }
+
     }
 }

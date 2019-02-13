@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace ITU.RefereeAssistant.Domain.Models
 {
-    class Round
+    public class Round
     {
+        public Round()
+        {
+            Matches = new List<Match>();
+        }
+
         long ID { get; set; }
 
-        Match[] Mathcse { get; set; }
+        public List<Match> Matches { get; set; }
+
+        internal void AddMatch(Match match)//
+        {
+            Matches.Add(match);
+        }
     }
 }

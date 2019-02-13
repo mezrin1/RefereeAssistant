@@ -4,11 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace ITU.RefereeAssistant.Domain.Models
 {
-    class Raiting
+    public class Raiting
     {
-        Player Players { get; set; }
+        public Raiting()
+        {
+            Players = new Player();
+        }
+
+        public Player Players { get; set; }
         
         long Score { get; set; }
     }
