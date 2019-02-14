@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ITU.RefereeAssistant.Domain;
 using ITU.RefereeAssistant.Domain.Models;
 
 namespace ITU.RefereeAssistant.BL
@@ -14,6 +15,8 @@ namespace ITU.RefereeAssistant.BL
     /// <returns>Турнир</returns>
     public class TournamentService
     {
+        ITournamentType tourType { get; set;}
+
         /// <summary>
         /// ctor - автоматическое создание конструктора класса
         /// </summary>
@@ -22,15 +25,23 @@ namespace ITU.RefereeAssistant.BL
 
         }
 
-        public Tournament Create(Raiting[] raitings, TournamentType type)
+        
+
+        public Tournament Create(Raiting[] raitings, ITournamentType type)
         {
-            var Tournament = new Tournament(raitings, type);
+            tourType = type;
+            var Tournament = new Tournament(raitings);
             return Tournament;
         }
 
         public Round GenerateRound(Tournament tournament)
         {
-            var round = tournament.GetNextRound();
+            var players = tournament.Start.Select(raiting => raiting.Player);
+
+            var round = tourType.GetNextRound(players, tournament.Rounds);
+
+            tournament.Rounds.Add(round);
+
             return round;
         }
     }

@@ -8,11 +8,11 @@ namespace ITU.RefereeAssistant.Domain.Models
 {
     public class Player
     {
-        public string name { get; set; }
+        public string Name { get; set; }
         
         public override string ToString()//
         {
-            return name;
+            return Name;
         }
     }
 }

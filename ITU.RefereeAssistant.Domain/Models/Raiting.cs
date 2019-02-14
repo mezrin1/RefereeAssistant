@@ -10,13 +10,14 @@ namespace ITU.RefereeAssistant.Domain.Models
 {
     public class Raiting
     {
-        public Raiting()
+        public Raiting(Player player)
         {
-            Players = new Player();
+            Player = player;
+            Score = 0;
         }
 
-        public Player Players { get; set; }
+        public Player Player { get; set; }
         
-        long Score { get; set; }
+        public long Score { get; set; }
     }
 }

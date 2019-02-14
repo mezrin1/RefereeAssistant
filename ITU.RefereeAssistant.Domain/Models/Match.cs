@@ -14,6 +14,7 @@ namespace ITU.RefereeAssistant.Domain.Models
         public Match()
         {
             Players = new List<Player>();
+            Raitings = new List<Raiting>();
         }
 
         /// <summary>
@@ -24,9 +25,9 @@ namespace ITU.RefereeAssistant.Domain.Models
         /// <summary>
         /// список участников
         /// </summary>
-        public List<Player> Players { get; set; }
+        public IList<Player> Players { get; set; }
 
-        Raiting[] Raitings { get; set; }
+        public IList<Raiting> Raitings { get; set; }
 
         public override string ToString()
         {

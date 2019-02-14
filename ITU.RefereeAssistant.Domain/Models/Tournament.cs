@@ -21,25 +21,24 @@ namespace ITU.RefereeAssistant.Domain.Models
         /// </summary>
         /// <param name="start"> Стартовый набор команд</param>
         /// <param name="type"> Тип системы проведения турнира</param>
-        public Tournament(Raiting[] start, TournamentType type) : this() //вызов конструктора public Tournament()
+        public Tournament(Raiting[] start) : this() //вызов конструктора public Tournament()
         {
             Start.AddRange(start);
-            Type = type;//
         }
 
         #region MyRegion
         string Name { get; set; }
         TournamentType Type { get; set; }
-        List<Raiting> Start { get; set; }
-        List<Raiting> Current { get; set; }
-        List<Round> Rounds { get; set; }
+        public List<Raiting> Start { get; set; }
+        public List<Raiting> Current { get; set; }
+        public List<Round> Rounds { get; set; }
         #endregion
 
         /// <summary>
         /// Получить следующий раунд
         /// </summary>
         /// <returns></returns>
-        public Round GetNextRound()
+       /* public Round GetNextRound()
         {
             var round = new Round();
             var count = Start.Count;
@@ -52,12 +51,12 @@ namespace ITU.RefereeAssistant.Domain.Models
                 switch(Type)
                 {
                     case TournamentType.Olimpic: //olympic
-                        match.Players.Add(Start[i*2].Players);
-                        match.Players.Add(Start[i*2 + 1].Players);
+                        match.Players.Add(Start[i*2].Player);
+                        match.Players.Add(Start[i*2 + 1].Player);
                         break;
                     case TournamentType.Swiss: //swiss
-                        match.Players.Add(Start[i].Players);
-                        match.Players.Add(Start[count - i - 1].Players);
+                        match.Players.Add(Start[i].Player);
+                        match.Players.Add(Start[count - i - 1].Player);
                         break;
                 }
 
@@ -67,6 +66,6 @@ namespace ITU.RefereeAssistant.Domain.Models
             Rounds.Add(round);
 
             return round;
-        }
+        }*/
     }
 }
