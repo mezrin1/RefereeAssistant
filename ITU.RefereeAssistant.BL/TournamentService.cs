@@ -17,16 +17,6 @@ namespace ITU.RefereeAssistant.BL
     {
         ITournamentType tourType { get; set;}
 
-        /// <summary>
-        /// ctor - автоматическое создание конструктора класса
-        /// </summary>
-        public TournamentService()
-        {
-
-        }
-
-        
-
         public Tournament Create(Raiting[] raitings, ITournamentType type)
         {
             tourType = type;

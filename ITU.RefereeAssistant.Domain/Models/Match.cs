@@ -8,9 +8,6 @@ namespace ITU.RefereeAssistant.Domain.Models
 {
     public class Match
     {
-        /// <summary>
-        /// ctor
-        /// </summary>
         public Match()
         {
             Players = new List<Player>();

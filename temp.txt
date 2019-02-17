@@ -1,0 +1,133 @@
+
+
+                //var assembly = Assembly.GetAssembly(typeof(ITournamentType));
+                //var assembly = Assembly.LoadFrom(@"D:\RefereeAssistant\ITU.RefereeAssistant.Consolka\bin\Debug\SuperType.dll");
+                
+                /* альтернативный вариант
+                return dlls
+                .Select(dll => Assembly.LoadFrom(dll))
+                .SelectMany(assem => assem.GetTypes())
+                .Where(type => type.GetInterfaces().Any(i => i.Name == "ITournamentType"))
+                .Select(tt => Activator.CreateInstance(tt))
+                .OfType<ITournamentType>()
+                .ToList();*/
+
+            //var tourTypes = GetTypes();
+            /*  var tourTypes = new List<ITournamentType>()
+              {
+                  new OlympicTourType()
+              };*/
+
+           // TournamentType type = new TournamentType();
+          //  int count_players;
+
+            //Console.WriteLine("Выберите тип системы:");
+            //Console.WriteLine("1. Олимпийская\n2. Швейцарская\n3. Круговая\n4. Нокаут");
+
+            //var round = ts.GenerateRound(tour);
+
+            /*     switch (Console.ReadLine())
+                 {
+                     case "1":
+                         type = TournamentType.Olimpic;
+                         break;
+                     case "2":
+                         type = TournamentType.Swiss;
+                         break;
+                     case "3":
+                         type = TournamentType.Circle;
+                         break;
+                     case "4":
+                         type = TournamentType.KnockOut;
+                         break;
+                 }
+
+                 while (true)
+                 {
+                     Console.WriteLine("Введите количество участников:");
+                     count_players = Convert.ToInt32(Console.ReadLine());
+
+                     if (count_players > 0 && (count_players & 0x1) == 0) break;
+                     else Console.WriteLine("Число должно быть четным!\n");
+                 }
+
+                 Raiting[] raiting = new Raiting[count_players];
+
+
+                 for (int i = 0; i < count_players; i++)
+                 {
+                     raiting[i] = new Raiting();
+                     Console.WriteLine("Введите имя участника №{0}:", i + 1);
+                     raiting[i].Players.name = Console.ReadLine();
+                 }
+
+                 //type = TournamentType.Olimpic;
+                 var tour = ts.Create(raiting, type);*/
+
+            /*var tour = ts.Create(new Raiting[] 
+            {
+                new Raiting()
+                {
+                    Players = new Player() { name = "q1"}
+                },
+                new Raiting()
+                {
+                    Players = new Player() { name = "q2"}
+                },
+                new Raiting()
+                {
+                    Players = new Player() { name = "q3"}
+                },
+                new Raiting()
+                {
+                    Players = new Player() { name = "q4"}
+                }
+
+            }, TournamentType.Olimpic);*/
+
+            //var round = ts.GenerateRound(tour);
+
+            /*foreach (var item in round.Matches)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            */
+
+			                //var select = Console.ReadLine();
+                //round = select == "1" ? ts.GenerateRound(tour) : null;
+
+
+
+        /// <summary>
+        /// Получить следующий раунд
+        /// </summary>
+        /// <returns></returns>
+       /* public Round GetNextRound()
+        {
+            var round = new Round();
+            var count = Start.Count;
+            var matchCount = count / 2;
+
+            for (int i = 0; i < matchCount; i++)
+            {
+                var match = new Match();
+
+                switch(Type)
+                {
+                    case TournamentType.Olimpic: //olympic
+                        match.Players.Add(Start[i*2].Player);
+                        match.Players.Add(Start[i*2 + 1].Player);
+                        break;
+                    case TournamentType.Swiss: //swiss
+                        match.Players.Add(Start[i].Player);
+                        match.Players.Add(Start[count - i - 1].Player);
+                        break;
+                }
+
+                round.AddMatch(match);
+            }
+
+            Rounds.Add(round);
+
+            return round;
+        }*/
