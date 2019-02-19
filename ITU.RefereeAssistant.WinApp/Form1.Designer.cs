@@ -31,12 +31,17 @@
             this.cbTourType = new System.Windows.Forms.ComboBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.gbPlayers = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbPlayerName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.playerText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.matchControl1 = new ITU.RefereeAssistant.WinApp.MatchControl();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbTourType
@@ -59,21 +64,29 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(474, 333);
+            this.btnReset.Location = new System.Drawing.Point(483, 335);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(129, 23);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Очистить список";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
-            // gbPlayers
+            // tableLayoutPanel1
             // 
-            this.gbPlayers.Location = new System.Drawing.Point(349, 12);
-            this.gbPlayers.Name = "gbPlayers";
-            this.gbPlayers.Size = new System.Drawing.Size(241, 297);
-            this.gbPlayers.TabIndex = 7;
-            this.gbPlayers.TabStop = false;
-            this.gbPlayers.Text = "Список участников";
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(30, 181);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbPlayerName
             // 
@@ -114,22 +127,71 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(157, 164);
+            this.label2.Location = new System.Drawing.Point(261, 315);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "label2";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.matchControl1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(336, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 296);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Round1";
+            // 
+            // matchControl1
+            // 
+            this.matchControl1.FirstPlayer = "Зенит";
+            this.matchControl1.FirstScore = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.matchControl1.Location = new System.Drawing.Point(0, 19);
+            this.matchControl1.Name = "matchControl1";
+            this.matchControl1.SecondPlayer = "Локомотив";
+            this.matchControl1.SecondScore = new decimal(new int[] {
+            13,
+            0,
+            0,
+            0});
+            this.matchControl1.Size = new System.Drawing.Size(186, 82);
+            this.matchControl1.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(47, 259);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Следующий раунд";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Список участников: ";
+            // 
             // FormReferee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 368);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(686, 368);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.playerText);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.gbPlayers);
             this.Controls.Add(this.tbPlayerName);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnStart);
@@ -137,6 +199,7 @@
             this.Name = "FormReferee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Помощник судьи";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,12 +210,16 @@
         private System.Windows.Forms.ComboBox cbTourType;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.GroupBox gbPlayers;
         private System.Windows.Forms.TextBox tbPlayerName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label playerText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private MatchControl matchControl1;
+        private System.Windows.Forms.Label label3;
     }
 }
 

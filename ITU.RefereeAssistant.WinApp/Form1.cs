@@ -85,7 +85,7 @@ namespace ITU.RefereeAssistant.WinApp
         /// Добавление имени игрока из поля tbPlayerName 
         /// в список участников gbPlayers
         /// </summary>
-        private void AddPlayer()
+        /*private void AddPlayer()
         {
             var height = 20;
             var step = gbPlayers.Controls.Count;
@@ -107,6 +107,40 @@ namespace ITU.RefereeAssistant.WinApp
             tbPlayerName.Text = "";
 
             this.gbPlayers.Controls.Add(label);
+        }*/
+
+        private void AddPlayer()
+        {
+            PlayerNames.Add(tbPlayerName.Text);
+
+            var label = new Label
+            {
+                AutoSize = true,
+                Name = "label",
+                TabIndex = 10,
+                BackColor = Color.White,
+                Text = tbPlayerName.Text,
+            };
+
+            tbPlayerName.Text = "";
+
+            var button = new Button
+            {
+                Name = "button",
+                Size = new System.Drawing.Size(25, 25),
+                TabIndex = 5,
+                Text = "X",
+                ForeColor = Color.Red,
+                UseVisualStyleBackColor = true,
+                Tag = label,
+            };
+
+            button.Click += new System.EventHandler(btnRemove_Click);
+
+            tableLayoutPanel1.Controls.Add(label);
+            tableLayoutPanel1.Controls.Add(button);
+
+            label3.Text += $"Список участников: {PlayerNames.Count}";
         }
 
 
@@ -132,6 +166,34 @@ namespace ITU.RefereeAssistant.WinApp
             {
                 AddPlayer();
             }
+        }
+
+
+        /// <summary>
+        /// Удаление участников
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+           /* var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+
+            var label = button.Tag as Label;
+
+            if (label != null)
+            {
+                PlayerNames.Remove(label.Text);
+                label.Dispose();
+            }
+
+            button.Dispose();
+
+            gbPlayers.Text = $"Список участников {PlayerNames.Count}";
+            */
         }
 
 
@@ -201,6 +263,5 @@ namespace ITU.RefereeAssistant.WinApp
               //gbPlayers.Controls.
 
         }
-
     }
 }
